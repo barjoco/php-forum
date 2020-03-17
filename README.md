@@ -10,12 +10,18 @@ The focus of this project is to demonstrate a practical use of the following ski
 * Web design
 * Relational databases
 
-![](https://github.com/barjoco/php-forum/blob/master/preview.png)
+<kbd>
+    <img src="https://raw.githubusercontent.com/barjoco/php-forum/master/preview.png">
+</kbd>
 
 <br>
 
-![](https://github.com/barjoco/php-forum/blob/master/preview2.png)
+<kbd>
+    <img src="https://raw.githubusercontent.com/barjoco/php-forum/master/preview2.png">
+</kbd>
 
 <br>
 
-![](https://github.com/barjoco/php-forum/blob/master/preview3.png)
+<kbd>
+    <img src="https://raw.githubusercontent.com/barjoco/php-forum/master/preview3.png">
+</kbd>
