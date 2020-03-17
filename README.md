@@ -1,4 +1,4 @@
-# jsforum
+# php-fprum
 
 JSForum is a community forum written in PHP using the MVC project framework. The forum theme is JavaScript, a place to share projects, request help, collaborate, etc., however, the development of the system has no particular focus on JavaScript itself. 
 
