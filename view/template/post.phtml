@@ -1,6 +1,9 @@
 <?
 $author = $db->get_user_by_id($post['author']);
-$category = $db->get_category($post['category']);
+
+$is_message = isset($is_message) ? $is_message : null;
+$is_full = isset($is_full) ? $is_full : null;
+if (!$is_message) $category = $db->get_category($post['category']);
 ?>
 
 <div class="post_item">
@@ -11,13 +14,15 @@ $category = $db->get_category($post['category']);
         <div class="post_item__header">
             <div>
                 <div class="post_item__title">
-                    <a class="h4" href="/post.php?p=<? echo $post['id'] ?>"><? echo $post['title'] ?></a>
-                    <a href="?c=<? echo $category['id'] ?>" class="post_item__category"><? echo $category['name'] ?></a>
+                    <a class="h4" <? if (!$is_message) { ?>href="/post.php?p=<? echo $post['id'] ?>"<? } ?>><? echo $post['title'] ?></a>
+                    <? if (!$is_message) { ?>
+                        <a href="?c=<? echo $category['id'] ?>" class="post_item__category"><? echo $category['name'] ?></a>
+                    <? } ?>
                 </div>
                 <a class="post_item__author" href="/profile.php?u=<? echo $author['id'] ?>"><? echo $author['username'] ?></a>
             </div>
             <p class="post_item__date"><? echo $post['creation_date'] ?></p>
         </div>
-        <a href="/post.php?p=<? echo $post['id'] ?>" class="post_item__body"><? echo $post['body'] ?></a>
+        <a <? if (!$is_message) { ?>href="/post.php?p=<? echo $post['id'] ?>"<? } ?> class="post_item__body <? if (!$is_full) echo 'trunc' ?>"><? echo $post['body'] ?></a>
     </div>
 </div>

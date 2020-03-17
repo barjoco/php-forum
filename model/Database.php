@@ -179,6 +179,11 @@ class Database {
     return $this->get_page($page_num, $page_len, 'posts', null, $conditionals);
   }
 
+  // Get replies
+  public function get_replies($post_id) {
+    return $this->query('SELECT * FROM posts WHERE replying_to = ?', 'i', $post_id);
+  }
+
   // Get a page of messages
   public function get_messages($page_num, $page_len, $uid) {
     $conditionals = "WHERE recipient = $uid ORDER BY id DESC";

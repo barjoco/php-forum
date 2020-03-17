@@ -6,11 +6,40 @@ require 'view/template/nav.phtml';
 
 <main>
   <div class="page">
-    <?
-      $post = $db->get_post($_GET['p']);
-      var_dump($post);
-    ?>
-    <img src="static/img/img_attachment/<? echo $_GET['p'] ?>.jpg">
+    <div>
+      <?
+        $post = $db->get_post($_GET['p']);
+        $is_full = true; // Slightly modify post.phtml to show the full post
+        require 'view/template/post.phtml';
+      ?>
+    </div>
+    <br><br>
+
+    <!-- Replies -->
+    <h3>Replies</h3>
+    <br>
+    <div>
+      <?
+        $replies = $db->get_replies($_GET['p']);
+        if ($replies->num_rows > 0) {
+          $is_message = true; // Slightly modifies post.phtml to display messages
+          while ($post = $db->fetch_from($replies)) {
+            require 'view/template/post.phtml';
+          }
+        } else {
+          echo 'No replies to show';
+        }
+      ?>
+    </div>
+    <br><br>
+
+    <!-- Reply form -->
+    <form id="reply_form" action="" method="POST" class="style2">
+      <textarea name="body" cols="30" rows="10" for="reply_form" placeholder="Write your reply here..." required></textarea>
+      <div>
+        <button type="submit" class="style3" name="reply_submit">Send reply</button>
+      </div>
+    </form>
   </div>
 </main>
 

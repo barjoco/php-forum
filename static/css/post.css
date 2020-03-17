@@ -24,9 +24,7 @@
 
 .post_item__details {
     display: flex;
-    justify-content: center;
-    margin-right: 0.25rem;
-    width: 6rem;
+    width: 5rem;
 }
 
 .post_item__profile_img {
@@ -88,13 +86,15 @@
 
 .post_item__body {
     display: block;
-    max-height: 2rem;
-    overflow: hidden;
     position: relative;
     font-size: 0.9rem;
     text-decoration: none;
 }
-.post_item__body::after {
+.post_item__body.trunc {
+    max-height: 2rem;
+    overflow: hidden;
+}
+.post_item__body.trunc::after {
     content: "";
     position: absolute;
     top: 1rem;

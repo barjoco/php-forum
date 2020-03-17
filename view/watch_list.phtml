@@ -26,8 +26,7 @@ $l = get_l(); // Page length
         $watch_list = $db->get_watch_list($p, $l, $_SESSION['uid']);
         if ($watch_list->num_rows > 0) {
           while ($post = $db->fetch_from($watch_list)) {
-            var_dump($post);
-            echo '<br><br>';
+            require 'view/template/post.phtml';
           }
         } else {
           echo 'No posts to show';
@@ -35,6 +34,7 @@ $l = get_l(); // Page length
         }
       ?>
 
+      <br><br>
       <a href="<? echo "?p=".($p-1>0?$p-1:1)."&l=$l" ?>" class="button style3">🡰</a>
       <a href="<? echo "?p=".($p+1)."&l=$l" ?>" class="button style3">🡲</a>
     </div>

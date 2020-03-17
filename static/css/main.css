@@ -414,7 +414,7 @@ form.style2 {
   flex-direction: column;
 }
 
-form.style2 > * {
+form.style2 > input {
   margin-bottom: 2rem;
 }
 

@@ -25,15 +25,16 @@ $l = get_l(); // Page length
       <?
         $messages = $db->get_messages($p, $l, $_SESSION['uid']);
         if ($messages->num_rows > 0) {
+          $is_message = true; // Slightly modifies post.phtml to display messages
           while ($post = $db->fetch_from($messages)) {
-            var_dump($post);
-            echo '<br>';
+            require 'view/template/post.phtml';
           }
         } else {
           echo 'No messages to show';
         }
       ?>
 
+      <br><br>
       <a href="<? echo "?p=".($p-1>0?$p-1:1)."&l=$l" ?>" class="button style3">🡰</a>
       <a href="<? echo "?p=".($p+1)."&l=$l" ?>" class="button style3">🡲</a>
     </div>
