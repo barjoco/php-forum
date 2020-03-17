@@ -34,12 +34,15 @@ require 'view/template/nav.phtml';
     <br><br>
 
     <!-- Reply form -->
-    <form id="reply_form" action="" method="POST" class="style2">
+    <? if (isset($_SESSION['uid'])) { ?>
+    <form id="reply_form" action="controller/reply.php" method="POST" class="style2">
       <textarea name="body" cols="30" rows="10" for="reply_form" placeholder="Write your reply here..." required></textarea>
+      <input type="hidden" name="replying_to" value="<? echo $_GET['p'] ?>">
       <div>
         <button type="submit" class="style3" name="reply_submit">Send reply</button>
       </div>
     </form>
+    <? } ?>
   </div>
 </main>
 

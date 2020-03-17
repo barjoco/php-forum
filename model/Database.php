@@ -181,7 +181,7 @@ class Database {
 
   // Get replies
   public function get_replies($post_id) {
-    return $this->query('SELECT * FROM posts WHERE replying_to = ?', 'i', $post_id);
+    return $this->query('SELECT * FROM posts WHERE replying_to = ? ORDER BY creation_date DESC', 'i', $post_id);
   }
 
   // Get a page of messages
