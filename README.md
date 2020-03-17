@@ -14,13 +14,13 @@ The focus of this project is to demonstrate a practical use of the following ski
     <img src="https://raw.githubusercontent.com/barjoco/php-forum/master/preview.png">
 </kbd>
 
-<br>
+&nbsp;
 
 <kbd>
     <img src="https://raw.githubusercontent.com/barjoco/php-forum/master/preview2.png">
 </kbd>
 
-<br>
+&nbsp;
 
 <kbd>
     <img src="https://raw.githubusercontent.com/barjoco/php-forum/master/preview3.png">
