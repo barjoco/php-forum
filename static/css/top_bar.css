@@ -94,10 +94,6 @@
   height: 50%;
 }
 
-.top_bar_right a {
-  margin-right: 1rem;
-}
-
 .top_bar_username {
   margin-right: 1rem;
   color: white;
@@ -158,6 +154,7 @@
   box-shadow: 0 0 0 1px white;
   box-sizing: border-box;
   outline: none;
+  margin-left: 0.5rem;
 }
 .top_bar_menu_btn img {
   position: absolute;

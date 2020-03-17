@@ -162,7 +162,7 @@ class Database {
   public function get_posts($page_num, $page_len, $categories=null) {
     $categories = $categories ? implode(',', $categories) : null;
     $conditionals = 'WHERE replying_to IS NULL';
-    $conditionals .= ($categories ? " AND category IN ($categories)" : '') . ' ORDER BY id DESC';
+    $conditionals .= ($categories ? " AND category IN ($categories)" : '') . ' ORDER BY creation_date DESC';
     return $this->get_page($page_num, $page_len, 'posts', null, $conditionals);
   }
 

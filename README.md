@@ -11,3 +11,11 @@ The focus of this project is to demonstrate a practical use of the following ski
 * Relational databases
 
 ![](https://github.com/barjoco/php-forum/blob/master/preview.png)
+
+<br>
+
+![](https://github.com/barjoco/php-forum/blob/master/preview2.png)
+
+<br>
+
+![](https://github.com/barjoco/php-forum/blob/master/preview3.png)
