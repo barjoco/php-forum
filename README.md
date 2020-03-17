@@ -12,7 +12,7 @@ The focus of this project is to demonstrate a practical use of the following ski
 * Web design
 
 <kbd>
-    <img src="https://raw.githubusercontent.com/barjoco/php-forum/master/preview.png">
+    <img src="https://raw.githubusercontent.com/barjoco/php-forum/master/preview_default.png">
 </kbd>
 
 &nbsp;
