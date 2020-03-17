@@ -133,7 +133,7 @@
   .search_bar {
     display: none;
   }
-  .top_bar_right .top_bar_menu_btn {
+  .top_bar_right .top_bar_menu_btn, .top_bar_right a {
     display: none;
   }
   .top_bar_right .popout_btn {
