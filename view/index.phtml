@@ -1,0 +1,62 @@
+<?
+require 'view/template/header.phtml';
+require 'view/template/top_bar.phtml';
+require 'view/template/nav.phtml';
+
+$categories = $db->get_categories();
+$c = get_c(); // Categories
+$p = get_p(); // Page number
+$l = get_l(); // Page length
+?>
+
+<main>
+
+  <!-- Posts list -->
+  <div class="page_split_left">
+    <div class="post_list">
+      <?
+        $posts = $db->get_posts($p, $l, $c);
+        if ($posts->num_rows > 0) {
+          while ($post = $db->fetch_from($posts)) {
+            require 'view/template/post.phtml';
+          }
+        } else {
+          echo 'No posts to show';
+        }
+      ?>
+      
+      <br><br>
+      <? $c_string = isset($_GET['c']) ? $_GET['c'] : ''; ?>
+      <a href="<? echo "?c=$c_string&p=".($p-1>0?$p-1:1)."&l=$l" ?>" class="button style3">🡰</a>
+      <a href="<? echo "?c=$c_string&p=".($p+1)."&l=$l" ?>" class="button style3">🡲</a>
+
+    </div>
+  </div>
+
+  <!-- Filter form -->
+  <div class="page_split_right">
+    <h2>Filter</h2>
+    <form action="controller/filter_posts.php" method="POST">
+      <div class="checkbox_wrapper">
+        <? while ($category = $db->fetch_from($categories)) { ?>
+          <div class="checkbox">
+            <input type="checkbox" <? if (!$c || in_array($category['id'], $c)) echo 'checked' ?> name="<? echo $category['id'] ?>">
+            <span><? echo $category['name'] ?></span>
+          </div>
+        <? } ?>
+      </div>
+      <div>
+        <input name="page_num" type="number" min="1" class="style1" value="<? echo $p ?>">
+        <label>Jump to page</label>
+      </div>
+      <div>
+        <input name="page_len" type="number" min="1" class="style1" value="<? echo $l ?>">
+        <label>Results per page</label>
+      </div>
+      <button type="submit" class="style3" name="filter_submit">Submit</button>
+    </form> 
+  </div>
+
+</main>
+
+<? require 'view/template/footer.phtml' ?>

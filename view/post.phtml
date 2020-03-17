@@ -1,0 +1,17 @@
+<?
+require 'view/template/header.phtml';
+require 'view/template/top_bar.phtml';
+require 'view/template/nav.phtml';
+?>
+
+<main>
+  <div class="page">
+    <?
+      $post = $db->get_post($_GET['p']);
+      var_dump($post);
+    ?>
+    <img src="static/img/img_attachment/<? echo $_GET['p'] ?>.jpg">
+  </div>
+</main>
+
+<? require 'view/template/footer.phtml' ?>

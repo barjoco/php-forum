@@ -1,0 +1,237 @@
+.top_bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--top_bar_height);
+  width: 100%;
+  background: var(--theme_gradient);
+  display: flex;
+  justify-content: space-between;
+  box-shadow: var(--box_shadow);
+  z-index: 2;
+}
+
+.top_bar > div {
+  height: 100%;
+}
+
+.top_bar_left,
+.top_bar_right {
+  display: flex;
+  align-items: center;
+}
+
+.top_bar_left {
+  margin-left: 2rem;
+}
+
+.top_bar_right {
+  margin-right: 2rem;
+}
+
+.top_bar_right a {
+  margin-left: 0.5rem;
+}
+
+.search_bar {
+  margin-left: 2rem;
+  width: 20vw;
+}
+
+.search_bar form {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.search_bar input {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  box-sizing: border-box;
+  padding: 0.6rem 1.1rem;
+  padding-right: 2.5rem;
+  border-radius: 0.2rem;
+  transition: 250ms ease-in-out;
+}
+
+.search_bar input:focus {
+  background-color: white;
+  color: var(--theme);
+}
+
+.search_bar input::placeholder {
+  color: white;
+}
+
+.search_bar button {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  background-color: transparent;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.search_bar button img {
+  height: 0.75rem;
+  width: 0.75rem;
+}
+
+.top_bar_right .popout_btn {
+  display: none;
+  background-color: transparent;
+  height: calc(var(--top_bar_height) - 2rem);
+  width: calc(var(--top_bar_height) - 2rem);
+  padding: 0;
+  outline: none;
+}
+
+.top_bar_right .popout_btn img {
+  height: 50%;
+}
+
+.top_bar_right a {
+  margin-right: 1rem;
+}
+
+.top_bar_username {
+  margin-right: 1rem;
+  color: white;
+}
+
+.popout {
+  position: absolute;
+  right: calc((100vw - var(--top_bar_height)) * -1);
+  top: var(--top_bar_height);
+  height: calc(100vh - var(--top_bar_height));
+  width: calc(100vw - var(--top_bar_height));
+  background: var(--theme_gradient);
+  z-index: 3;
+  transition: 500ms ease-in-out;
+}
+
+.popout.active {
+  right: 0;
+}
+
+.popout ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.popout li {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.popout a {
+  text-decoration: none;
+  color: white;
+}
+
+@media (orientation: portrait) {
+  .search_bar {
+    display: none;
+  }
+  .top_bar_right .top_bar_menu_btn {
+    display: none;
+  }
+  .top_bar_right .popout_btn {
+    display: block;
+  }
+}
+
+.top_bar_menu_btn {
+  background-color: white;
+  overflow: hidden;
+  border-radius: 99rem;
+  height: 2.25rem;
+  width: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 0 1px white;
+  box-sizing: border-box;
+  outline: none;
+}
+.top_bar_menu_btn img {
+  position: absolute;
+  height: 100%;
+}
+
+.top_bar_menu {
+  position: absolute;
+  top: calc(var(--top_bar_height) * 1.25);
+  right: calc(var(--top_bar_height) * 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: white;
+  border-radius: 0.75rem;
+  width: 15rem;
+  padding: 2rem;
+  border: 1px solid var(--theme_light);
+  border-bottom: 2px solid var(--theme_light);
+  box-shadow: var(--theme_shadow);
+  z-index: 3;
+  transition: 150ms ease-in-out;
+  transform: translateY(-1rem);
+  pointer-events: none;
+  opacity: 0;
+}
+.top_bar_menu.active {
+  transform: translateY(0);
+  pointer-events: all;
+  opacity: 1;
+}
+.top_bar_menu ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  padding-right: 6rem;
+}
+.top_bar_menu li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.top_bar_menu li a {
+  text-decoration: none;
+  color: var(--theme);
+}
+.top_bar_menu li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.top_bar_menu_header {
+  margin-bottom: 2rem;
+}
+.top_bar_menu_header a {
+  text-decoration: none;
+}
+.top_bar_menu_header p {
+  color: var(--theme);
+  font-family: Inter-medium;
+  font-size: 1rem;
+}
+.top_bar_menu_header_profile_img {
+  overflow: hidden;
+  border-radius: 99rem;
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 0.25rem;
+}
+.top_bar_menu_header_profile_img img {
+  position: absolute;
+  height: 100%;
+}

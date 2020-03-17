@@ -1,0 +1,131 @@
+<div class="top_bar">
+  <div class="top_bar_left">
+    <a href="/" class="logo">
+      <img src="static/img/logo.svg" alt="Logo">
+    </a>
+    <div class="search_bar">
+      <form action="/controller/search.php" method="POST">
+        <input id="search_input" type="text" name="s" placeholder="Search..." required>
+        <button name="search_submit" type="submit">
+          <img src="static/img/icon/search.svg" alt="Logo">
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="top_bar_right">
+    <? if (isset($_SESSION['uid'])) { ?>
+      <a href="/new-post.php" class="button style1">New post</a>
+      <button id="top_bar_menu_btn" class="top_bar_menu_btn">
+        <? echo $db->get_user_img('profile_img', $_SESSION['uid']) ?>
+      </button>
+    <? } else { ?>
+      <a href="/register.php" class="button style1">Register</a>
+      <a href="/login.php" class="button style2">Login</a>
+    <? } ?>
+
+    <button class="popout_btn" id="popout_btn">
+      <img src="static/img/icon/menu.svg" alt="Menu">
+    </button>
+  </div>
+</div>
+
+<? if (isset($_SESSION['uid'])) { ?>
+<div id="top_bar_menu" class="top_bar_menu">
+  <div class="top_bar_menu_header">
+    <a href="/profile.php?u=<? echo $_SESSION['uid'] ?>">
+      <div class="top_bar_menu_header_profile_img">
+        <? echo $db->get_user_img('profile_img', $_SESSION['uid']) ?>
+      </div>
+      <p><? echo $_SESSION['username'] ?></p>
+    </a>
+  </div>
+<? } ?>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/inbox.php">Inbox</a></li>
+    <li><a href="/profile.php?u=<? echo $_SESSION['uid'] ?>">Profile</a></li>
+    <li><a href="/watch-list.php">Watch list</a></li>
+    <li><a href="/new-post.php">New post</a></li>
+    <hr>
+    <li><a href="/logout.php">Logout</a></li>
+  </ul>
+</div>
+
+<div class="popout" id="popout">
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/inbox.php">Inbox</a>
+    </li>
+    <li>
+      <a href="/profile.php">Profile</a>
+    </li>
+    <li>
+      <a href="/watch-list.php">Watch list</a>
+    </li>
+    <li>
+      <a href="/new-post.php">New post</a>
+    </li>
+    <li>
+      <a href="/help.php">Help</a>
+    </li>
+    <li>
+      <a href="/settings.php">Settings</a>
+    </li>
+
+    <br>
+
+    <? if (isset($_SESSION['uid'])) { ?>
+      <li>
+        <a href="/logout.php">Logout</a>
+      </li>
+    <? } else { ?>
+      <li>
+        <a href="/register.php">Register</a>
+      </li>
+      <li>
+        <a href="/login.php">Login</a>
+      </li>
+    <? } ?>
+  </ul>
+</div>
+
+<script>
+const $popout = $("popout");
+const $popout_btn = $("popout_btn");
+
+$popout_btn.onclick = () => {
+  if ($popout.classList.contains("active")) {
+    $popout_btn.querySelector("img").src = "static/img/icon/menu.svg";
+    $popout.classList.remove("active");
+  } else {
+    $popout_btn.querySelector("img").src = "static/img/icon/close.svg";
+    $popout.classList.add("active");
+  }
+};
+</script>
+
+<? if (isset($_SESSION['uid'])) { ?>
+  <script>
+  const $top_bar_menu = $("top_bar_menu");
+  const $top_bar_menu_btn = $("top_bar_menu_btn");
+  let top_bar_menu_active = false;
+
+  $top_bar_menu_btn.onclick = () => {
+    window.addEventListener("click", close_top_bar_menu);
+  };
+
+  function close_top_bar_menu() {
+    if (top_bar_menu_active) {
+      top_bar_menu_active = false;
+      $top_bar_menu.classList.remove("active");
+      window.removeEventListener("click", close_top_bar_menu);
+    } else { 
+      top_bar_menu_active = true;
+      $top_bar_menu.classList.add("active");
+    }
+  }
+  </script>
+<? } ?>

@@ -1,0 +1,21 @@
+<? require 'view/template/header.phtml' ?>
+
+<section class="non_forum">
+  <form action="controller/login.php" method="POST" class="style1 login">
+    <h1>Login</h1>
+    <div class="input_with_icon">
+      <img src="static/img/icon/profile.svg" class="colour_by_theme">
+      <input type="text" required placeholder="Username" name="username" class="style1">
+    </div>
+    <div class="input_with_icon">
+      <img src="static/img/icon/lock.svg" class="colour_by_theme">
+      <input type="password" autocomplete="password" required placeholder="Password" name="password" class="style1">
+    </div>
+    <a href="/" class="logo">
+      <img src="static/img/logo.svg" alt="JS Forum">
+    </a>
+    <button type="submit" class="style3" name="login_submit">Submit</button>
+  </form>
+</section>
+
+<? require 'view/template/footer.phtml' ?>

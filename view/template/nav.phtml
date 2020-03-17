@@ -1,0 +1,41 @@
+<div class="nav">
+  <ul>
+    <li <? if ($page->get_title() === 'Home') echo 'class="active"' ?>>
+      <a href="/" data-tooltip="Home">
+        <img src="static/img/nav/home.svg" alt="Home">
+      </a>
+    </li>
+    <li <? if ($page->get_title() === 'Inbox') echo 'class="active"' ?>>
+      <a href="/inbox.php" data-tooltip="Inbox">
+        <img src="static/img/nav/inbox.svg" alt="Inbox">
+      </a>
+    </li>
+    <li <? if ($page->get_title() === 'Profile') echo 'class="active"' ?>>
+      <a href="/<? echo isset($_SESSION['uid']) ? 'profile.php?u='.$_SESSION['uid'] : 'login.php' ?>" data-tooltip="Profile">
+        <img src="static/img/nav/profile.svg" alt="Profile">
+      </a>
+    </li>
+    <li <? if ($page->get_title() === 'Watch list') echo 'class="active"' ?>>
+      <a href="/watch-list.php" data-tooltip="Watch list">
+        <img src="static/img/nav/watch_list.svg" alt="Watch list">
+      </a>
+    </li>
+    <li <? if ($page->get_title() === 'New post') echo 'class="active"' ?>>
+      <a href="/new-post.php" data-tooltip="New post">
+        <img src="static/img/nav/new_post.svg" alt="New post">
+      </a>
+    </li>
+  </ul>
+  <ul>
+    <li <? if ($page->get_title() === 'Help') echo 'class="active"' ?>>
+      <a href="/help.php" data-tooltip="Help">
+        <img src="static/img/nav/help.svg" alt="Help">
+      </a>
+    </li>
+    <li <? if ($page->get_title() === 'Settings') echo 'class="active"' ?>>
+      <a href="/settings.php" data-tooltip="Settings">
+        <img src="static/img/nav/settings.svg" alt="Settings">
+      </a>
+    </li>
+  </ul>
+</div>

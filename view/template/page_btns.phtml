@@ -1,0 +1,25 @@
+<?
+
+// Calculate previous and next buttons for pages
+
+function inactive($label) {
+  echo '<a class="button style3 inactive">'.$label.'</a>';
+}
+
+function active($label, $page, $p, $others) {
+  echo '<a class="button style3" href="/'.$page.'?p='.$p.$others.'">'.$label.'</a>';
+}
+
+if ($p == 1 && ($rows < $l || $rows == 0)) {
+  inactive('Previous');
+  inactive('Next');
+} elseif ($p == 1) {
+  inactive('Previous');
+  active('Next', $page, 2, $others);
+} elseif ($p > 1 && $rows == $l && $l > 1) {
+  active('Previous', $page, $p - 1, $others);
+  active('Next', $page, $p + 1, $others);
+} else {
+  active('Previous', $page, $p - 1, $others);
+  inactive('Next');
+}

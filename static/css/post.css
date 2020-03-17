@@ -1,0 +1,111 @@
+.post_list {
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+.post_item:not(:last-of-type) {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--theme_light);
+}
+.post_item:not(:first-of-type) {
+    padding-top: 1.5rem;
+}
+
+.post_item {
+    display: flex;
+    background-color: white;
+}
+
+.post_item__author {
+    text-decoration: none;
+    color: var(--theme);
+    font-size: 0.9rem;
+}
+
+.post_item__details {
+    display: flex;
+    justify-content: center;
+    margin-right: 0.25rem;
+    width: 6rem;
+}
+
+.post_item__profile_img {
+    width: 3.25rem;
+    height: 3.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 99rem;
+}
+.post_item__profile_img img {
+    height: 100%;
+}
+
+.post_item__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+.post_item__header > div {
+    width: 100%;
+}
+
+.post_item__content {
+    width: 100%;
+}
+
+.post_item__date {
+    color: var(--light_grey);
+    white-space: nowrap;
+}
+
+.post_item__category {
+    margin-left: 0.75rem;
+    font-size: 0.65rem;
+    text-decoration: none;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--theme_light);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    color: var(--theme);
+}
+
+.post_item__title {
+    display: flex;
+}
+
+.post_item__title .h4 {
+    /* width: 100%; */
+    max-width: 27rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.post_item__body {
+    display: block;
+    max-height: 2rem;
+    overflow: hidden;
+    position: relative;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+.post_item__body::after {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    width: 100%;
+    height: 2rem;
+    background: linear-gradient(transparent, white), linear-gradient(transparent, white), linear-gradient(transparent, white);
+}
+
+@media (orientation: portrait) {
+    .post_item__category, .post_item__date, .post_item__details {
+        display: none;
+    }
+}

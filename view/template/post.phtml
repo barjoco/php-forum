@@ -1,0 +1,23 @@
+<?
+$author = $db->get_user_by_id($post['author']);
+$category = $db->get_category($post['category']);
+?>
+
+<div class="post_item">
+    <div class="post_item__details">
+        <a href="/profile.php?u=<? echo $author['id'] ?>" class="post_item__profile_img"><? echo $db->get_user_img('profile_img', $author['id']) ?></a>
+    </div>
+    <div class="post_item__content">
+        <div class="post_item__header">
+            <div>
+                <div class="post_item__title">
+                    <a class="h4" href="/post.php?p=<? echo $post['id'] ?>"><? echo $post['title'] ?></a>
+                    <a href="?c=<? echo $category['id'] ?>" class="post_item__category"><? echo $category['name'] ?></a>
+                </div>
+                <a class="post_item__author" href="/profile.php?u=<? echo $author['id'] ?>"><? echo $author['username'] ?></a>
+            </div>
+            <p class="post_item__date"><? echo $post['creation_date'] ?></p>
+        </div>
+        <a href="/post.php?p=<? echo $post['id'] ?>" class="post_item__body"><? echo $post['body'] ?></a>
+    </div>
+</div>

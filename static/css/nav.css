@@ -1,0 +1,85 @@
+.nav {
+  position: absolute;
+  top: var(--top_bar_height);
+  left: 0;
+  height: calc(100% - var(--top_bar_height));
+  width: var(--top_bar_height);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--box_shadow_theme);
+  z-index: 1;
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.nav li {
+  width: var(--top_bar_height);
+  height: var(--top_bar_height);
+  opacity: 0.5;
+  position: relative;
+}
+
+.nav li.active {
+  opacity: 1;
+}
+
+.nav li.active::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 4px;
+  top: 0;
+  left: 0;
+  background: var(--theme_gradient);
+}
+
+.nav li:hover {
+  opacity: 1;
+}
+
+.nav li a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.nav li a img {
+  height: 40%;
+  filter: var(--colour_by_theme);
+}
+
+.nav li a:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: calc(var(--top_bar_height) + 1rem);
+  white-space: nowrap;
+  background: var(--theme);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 0.2rem;
+  box-shadow: var(--box_shadow);
+  z-index: 0;
+}
+
+.nav li a:hover::before {
+  --height: 0.65rem;
+  content: "";
+  position: absolute;
+  left: calc(var(--top_bar_height) + var(--height) + 1px);
+  background: var(--theme);
+  height: var(--height);
+  width: var(--height);
+  z-index: 3;
+  transform: rotate(45deg);
+  z-index: 1;
+}

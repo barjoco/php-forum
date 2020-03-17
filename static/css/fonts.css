@@ -1,0 +1,60 @@
+@font-face {
+  src: url(/static/fonts/Inter-BlackItalic.otf);
+  font-family: Inter-BlackItalic;
+}
+
+@font-face {
+  src: url(/static/fonts/Inter-Black.otf);
+  font-family: Inter-Black;
+}
+
+@font-face {
+  src: url(/static/fonts/Inter-BoldItalic.otf);
+  font-family: Inter-BoldItalic;
+}
+
+@font-face {
+  src: url(/static/fonts/Inter-Bold.otf);
+  font-family: Inter-Bold;
+}
+
+@font-face {
+  src: url(/static/fonts/Inter-ExtraBoldItalic.otf);
+  font-family: Inter-ExtraBoldItalic;
+}
+
+@font-face {
+  src: url(/static/fonts/Inter-ExtraBold.otf);
+  font-family: Inter-ExtraBold;
+}
+
+@font-face {
+  src: url(/static/fonts/Inter-Italic.otf);
+  font-family: Inter-Italic;
+}
+
+@font-face {
+  src: url(/static/fonts/Inter-MediumItalic.otf);
+  font-family: Inter-MediumItalic;
+}
+
+@font-face {
+  src: url(/static/fonts/Inter-Medium.otf);
+  font-family: Inter-Medium;
+}
+
+@font-face {
+  src: url(/static/fonts/Inter-Regular.otf);
+  font-family: Inter-Regular;
+}
+
+@font-face {
+  src: url(/static/fonts/Inter-SemiBoldItalic.otf);
+  font-family: Inter-SemiBoldItalic;
+}
+
+@font-face {
+  src: url(/static/fonts/Inter-SemiBold.otf);
+  font-family: Inter-SemiBold;
+}
+

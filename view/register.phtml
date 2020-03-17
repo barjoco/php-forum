@@ -1,0 +1,19 @@
+<? require 'view/template/header.phtml' ?>
+
+<section class="non_forum">
+  <form action="controller/register.php" method="POST" class="style1 register">
+    <h1>Register</h1>
+    <input type="text" required placeholder="First name" name="firstname" class="style1">
+    <input type="text" required placeholder="Last name" name="lastname" class="style1">
+    <input type="text" required placeholder="Username" name="username" class="style1">
+    <input type="email" required placeholder="Email" name="email" class="style1">
+    <input type="password" required placeholder="Password" name="password" class="style1" autocomplete="password">
+    <input type="password" required placeholder="Verify password" name="verify_password" class="style1" autocomplete="password">    
+    <a href="/" class="logo">
+      <img src="static/img/logo.svg" alt="JS Forum">
+    </a>
+    <button type="submit" class="style3" name="register_submit">Submit</button>
+  </form>
+</section>
+
+<? require 'view/template/footer.phtml' ?>

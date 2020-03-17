@@ -1,0 +1,20 @@
+paination
+
+
+page("SELECT * FROM posts", 1, 10)
+
+"SELECT * FROM post" . " LIMIT 1, 10"
+
+
+
+get_page page len query binds=null ...params=null
+params = params page len
+db_query query binds ...params
+
+get_posts
+get_page 'select * from posts where category in ? ? ?'
+
+
+
+
+get_page 1, 10 'posts' ['id', 'title'] ['category in (?, ?)', 'id = ?'], 'iii', [1, 2, 1]

@@ -1,0 +1,60 @@
+<?
+require 'view/template/header.phtml';
+require 'view/template/top_bar.phtml';
+require 'view/template/nav.phtml';
+
+$p = get_p(); // Page number
+$l = get_l(); // Page length
+?>
+
+<main>
+
+  <!-- Messages list -->
+  <div class="page_split_left">
+    <div class="page_header">
+      <div class="postfix_icon">
+        <h2>Inbox</h2>
+        <img src="static/img/nav/inbox.svg">
+      </div>
+      <div>
+        <a href="/compose.php" class="button style3">Compose</a>
+      </div>
+    </div>
+
+    <div class="post_list">
+      <?
+        $messages = $db->get_messages($p, $l, $_SESSION['uid']);
+        if ($messages->num_rows > 0) {
+          while ($post = $db->fetch_from($messages)) {
+            var_dump($post);
+            echo '<br>';
+          }
+        } else {
+          echo 'No messages to show';
+        }
+      ?>
+
+      <a href="<? echo "?p=".($p-1>0?$p-1:1)."&l=$l" ?>" class="button style3">🡰</a>
+      <a href="<? echo "?p=".($p+1)."&l=$l" ?>" class="button style3">🡲</a>
+    </div>
+  </div>
+
+  <!-- Filter form -->
+  <div class="page_split_right">
+    <h2>Filter</h2>
+    <form action="controller/filter_messages.php" method="POST">
+      <div>
+        <input name="page_num" type="number" min="1" class="style1" value="<? echo $p ?>">
+        <label>Jump to page</label>
+      </div>
+      <div>
+        <input name="page_len" type="number" min="1" class="style1" value="<? echo $l ?>">
+        <label>Results per page</label>
+      </div>
+      <button type="submit" class="style3" name="filter_submit">Submit</button>
+    </form>
+  </div>
+  
+</main>
+
+<? require 'view/template/footer.phtml' ?>

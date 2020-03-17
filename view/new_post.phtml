@@ -1,0 +1,41 @@
+<?
+require 'view/template/header.phtml';
+require 'view/template/top_bar.phtml';
+require 'view/template/nav.phtml';
+
+$categories = $db->get_categories();
+?>
+
+<main>
+  <div class="page">
+    <div class="page_header">
+      <div class="postfix_icon">
+        <h2>New post</h2>
+        <img src="static/img/nav/new_post.svg">
+      </div>
+    </div>
+
+    <form action="controller/new_post.php" method="POST" id="new_post_form" enctype="multipart/form-data" class="style2">
+      <div>
+        <input type="text" class="style1" name="title" placeholder="Title" required>
+        <select name="category" class="space-left" required>
+          <option selected class="default_option" value="">Select a category</option>
+          <? while ($category = $db->fetch_from($categories)) { ?>
+          <option value="<? echo $category['id'] ?>"><? echo $category['name'] ?></option>
+          <? } ?>        
+        </select>
+      </div>
+      <div>
+        <span>Attach an image to your post:</span>
+        <input type="file" name="img_attachment" accept="image/jpg">
+      </div>
+      <textarea name="body" cols="30" rows="10" for="new_post_form" placeholder="Write your post here..." required></textarea>
+      <div>
+        <button type="submit" class="style3" name="new_post_submit">Submit</button>
+      </div>
+    </form>
+
+  </div>
+</main>
+
+<? require 'view/template/footer.phtml' ?>

@@ -1,0 +1,31 @@
+<?
+require 'view/template/header.phtml';
+require 'view/template/top_bar.phtml';
+require 'view/template/nav.phtml';
+?>
+
+<main>
+  <div class="page">
+
+    <div class="page_header">
+      <div class="postfix_icon">
+        <h2>Compose</h2>
+        <img src="static/img/nav/post.svg">
+      </div>
+    </div>
+
+    <form action="controller/compose.php" method="POST" id="compose_form" class="style2">
+      <div>
+        <input type="text" name="title" class="style1" placeholder="Title">
+        <input type="text" name="recipient" class="style1 space-left" placeholder="Recipient">
+      </div>    
+      <textarea name="body" cols="30" rows="10" for="compose_form" placeholder="Write your message here..."></textarea>
+      <div>
+        <button type="submit" class="style3" name="compose_submit">Submit</button>
+      </div>
+    </form>
+
+  </div>
+</main>
+
+<? require 'views/template/footer.phtml' ?>
