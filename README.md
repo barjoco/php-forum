@@ -7,8 +7,9 @@ The focus of this project is to demonstrate a practical use of the following ski
 * PHP
 * MySQL
 * The model/view/controller project framework
+* Object-orientated code
+* Relational databases and database architecture
 * Web design
-* Relational databases
 
 <kbd>
     <img src="https://raw.githubusercontent.com/barjoco/php-forum/master/preview.png">
