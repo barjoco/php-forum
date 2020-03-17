@@ -10,4 +10,4 @@ The focus of this project is to demonstrate a practical use of the following ski
 * Web design
 * Relational databases
 
-![](https://github.com/barjoco/jsforum/blob/master/preview.png)
+![](https://github.com/barjoco/php-forum/blob/master/preview.png)
