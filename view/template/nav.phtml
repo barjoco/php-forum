@@ -20,6 +20,11 @@
         <img src="static/img/nav/watch_list.svg" alt="Watch list">
       </a>
     </li>
+    <li <? if ($page->get_title() === 'Chat') echo 'class="active"' ?>>
+      <a href="/chat.php" data-tooltip="Chat">
+        <img src="static/img/nav/chat.svg" alt="Chat">
+      </a>
+    </li>
     <li <? if ($page->get_title() === 'New post') echo 'class="active"' ?>>
       <a href="/new-post.php" data-tooltip="New post">
         <img src="static/img/nav/new_post.svg" alt="New post">

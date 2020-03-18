@@ -47,6 +47,21 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `chats`
+--
+
+CREATE TABLE `chats` (
+  `id` int(11) NOT NULL,
+  `body` varchar(1024) NOT NULL,
+  `has_img` tinyint(1) NOT NULL DEFAULT 0,
+  `author` int(11) NOT NULL,
+  `recipient` int(11) NOT NULL,
+  `creation_date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `messages`
 --
 

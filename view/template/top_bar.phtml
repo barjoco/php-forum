@@ -15,6 +15,7 @@
   <div class="top_bar_right">
     <? if (isset($_SESSION['uid'])) { ?>
       <a href="/new-post.php" class="button style1">New post</a>
+      <a href="/chat.php" class="button style2">Chat</a>
       <button id="top_bar_menu_btn" class="top_bar_menu_btn">
         <? echo $db->get_user_img('profile_img', $_SESSION['uid']) ?>
       </button>
@@ -46,6 +47,7 @@
     <li><a href="/profile.php?u=<? echo $_SESSION['uid'] ?>">Profile</a></li>
     <li><a href="/watch-list.php">Watch list</a></li>
     <li><a href="/new-post.php">New post</a></li>
+    <li><a href="/chat.php">Chat</a><span style="font-size: 0.6rem; background-color: var(--theme_light); color: var(--theme); margin-left: 0.5rem; padding: 0.15rem 0.3rem; border-radius: 0.2rem;">New</span></li>
     <hr>
     <li><a href="/logout.php">Logout</a></li>
   </ul>

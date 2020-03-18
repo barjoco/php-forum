@@ -38,13 +38,17 @@
   width: 20vw;
 }
 
-.search_bar form {
+.search_bar form,
+.chat_people_search form,
+.chat_main_input form {
   position: relative;
   align-items: center;
   justify-content: center;
 }
 
-.search_bar input {
+.search_bar input,
+.chat_people_search input,
+.chat_main_input input {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.25);
   color: white;
@@ -55,16 +59,22 @@
   transition: 250ms ease-in-out;
 }
 
-.search_bar input:focus {
+.search_bar input:focus,
+.chat_people_search input:focus,
+.chat_main_input input:focus {
   background-color: white;
   color: var(--theme);
 }
 
-.search_bar input::placeholder {
+.search_bar input::placeholder,
+.chat_people_search input::placeholder,
+.chat_main_input input::placeholder {
   color: white;
 }
 
-.search_bar button {
+.search_bar button,
+.chat_people_search button,
+.chat_main_input button {
   position: absolute;
   height: 100%;
   right: 0;
@@ -76,7 +86,9 @@
   outline: none;
 }
 
-.search_bar button img {
+.search_bar button img,
+.chat_people_search button img,
+.chat_main_input button img {
   height: 0.75rem;
   width: 0.75rem;
 }
@@ -133,7 +145,8 @@
   .search_bar {
     display: none;
   }
-  .top_bar_right .top_bar_menu_btn, .top_bar_right a {
+  .top_bar_right .top_bar_menu_btn,
+  .top_bar_right a {
     display: none;
   }
   .top_bar_right .popout_btn {
@@ -154,7 +167,7 @@
   box-shadow: 0 0 0 1px white;
   box-sizing: border-box;
   outline: none;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
 }
 .top_bar_menu_btn img {
   position: absolute;
@@ -174,7 +187,6 @@
   width: 15rem;
   padding: 2rem;
   border: 1px solid var(--theme_light);
-  border-bottom: 2px solid var(--theme_light);
   box-shadow: var(--theme_shadow);
   z-index: 3;
   transition: 150ms ease-in-out;

@@ -211,6 +211,16 @@ class Database {
     return "<img src='static/img/$target/$src'".($default?"class='colour_by_theme'":'').">";
   }
 
+  // Get the most recent chat from each of the people this user is chatting with
+  public function get_chats($uid) {
+    return $this->query('SELECT * FROM (SELECT * FROM chats ORDER BY creation_date DESC LIMIT 18446744073709551615) AS sub WHERE recipient = ? GROUP BY author', 'i', $uid);
+  }
+
+  // Get a set of chat messages from a specific chat between 2 users
+  public function get_chat($user1, $user2) {
+    return $this->query('SELECT * FROM chats WHERE (author = ? AND recipient = ?) OR (author = ? AND recipient = ?) ORDER BY creation_date ASC', 'iiii', $user1, $user2, $user2, $user1);
+  }
+
   // Insert post
   public function insert_post($title, $body, $has_img, $category, $author, $replying_to) {
     $this->exec('INSERT INTO posts VALUES (NULL, ?, ?, ?, 0, ?, ?, ?, DEFAULT)', 'ssiiii', $title, $body, $has_img, $category, $author, $replying_to);

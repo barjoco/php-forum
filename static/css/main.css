@@ -89,6 +89,7 @@ main {
 
 .page {
   width: var(--page_width);
+  position: relative;
 }
 .page.col {
   width: 100%;
@@ -109,7 +110,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .postfix_icon {
@@ -172,7 +173,7 @@ main {
 .page_split_left,
 .page_split_right,
 .page {
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 }
 
 .page_split_left {
@@ -440,7 +441,6 @@ textarea {
   padding: 1rem;
   border-radius: 0.5rem;
   border: 1px solid var(--theme);
-  border-bottom: 2px solid var(--theme);
   outline: none;
 }
 textarea::placeholder {
@@ -450,7 +450,6 @@ textarea::placeholder {
 input[type="number"] {
   width: 4rem;
   border: 1px solid var(--theme);
-  border-bottom: 2px solid var(--theme);
   margin-right: 0.5rem;
   border-radius: 0.25rem;
   padding: 0.25rem;

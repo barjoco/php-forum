@@ -21,7 +21,11 @@ if (!$is_message) $category = $db->get_category($post['category']);
                 </div>
                 <a class="post_item__author" href="/profile.php?u=<? echo $author['id'] ?>"><? echo $author['username'] ?></a>
             </div>
-            <p class="post_item__date"><? echo $post['creation_date'] ?></p>
+            <?
+            $phpdate = strtotime($post['creation_date']);
+            $mysqldate = date('d M Y', $phpdate);
+            ?>
+            <p class="post_item__date"><? echo $mysqldate ?></p>
         </div>
         <a <? if (!$is_message) { ?>href="/post.php?p=<? echo $post['id'] ?>"<? } ?> class="post_item__body <? if (!$is_full) echo 'trunc' ?>"><? echo $post['body'] ?></a>
     </div>

@@ -1,0 +1,10 @@
+<div class="chat_main__bubble_wrapper">
+    <?
+        $sender = $message['author'] === $_SESSION['uid'] ? 'me' : 'you';
+        $phpdate = strtotime($message['creation_date']);
+        $mysqldate = date('h:m d/m/y', $phpdate);
+    ?>
+    <div class="chat_main__bubble <? echo $sender ?>" data-date="<? echo $mysqldate ?>">
+        <p><? echo $message['body'] ?></p>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 :root {
   --theme: #1f91ff;
   --theme_gradient: linear-gradient(to bottom right, #47bbff, #4671ff);
-  --theme_light: #c7dfff;
+  --theme_light: #dfedff;
   --theme_background: #f6fbff;
   --theme_shadow: 0 2px 4px 0 rgba(0, 88, 170, 0.25);
   --colour_by_theme: invert(75%) sepia(1) saturate(500%) brightness(170%) hue-rotate(180deg);
