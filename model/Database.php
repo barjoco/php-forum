@@ -218,7 +218,7 @@ class Database {
 
   // Get a set of chat messages from a specific chat between 2 users
   public function get_chat($user1, $user2) {
-    return $this->query('SELECT * FROM chats WHERE (author = ? AND recipient = ?) OR (author = ? AND recipient = ?) ORDER BY creation_date ASC', 'iiii', $user1, $user2, $user2, $user1);
+    return $this->query('SELECT * FROM chats WHERE (author = ? AND recipient = ?) OR (author = ? AND recipient = ?) ORDER BY creation_date DESC', 'iiii', $user1, $user2, $user2, $user1); // Must be returned in reverse chronological order due to column-reverse markup
   }
 
   // Insert post
