@@ -1,6 +1,6 @@
 # php-forum
 
-This is a forum written in PHP developed to demonstrate a number of key web development skills. The forum theme is JavaScript, a place to share projects, request help, collaborate, etc., however, the development of this project has no particular focus or emphasis on JavaScript itself. 
+This is a forum written in PHP developed to demonstrate a number of key web development skills. The theme of the forum is the language of JavaScript, a place to share projects written in JS, request help, collaborate on projects, etc., however, the development of this project has no particular focus or emphasis on JavaScript itself. 
 
 The focus of this project is to demonstrate a practical use of the following skills:
 - HTML/CSS/JS
